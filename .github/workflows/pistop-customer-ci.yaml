@@ -2,7 +2,7 @@ name: CI of pistop-customer microservice
 #Déclencher le pipline si une modification fait dans le pistop-customer microserv
 on:
   push:
-    path:
+    paths:
       - 'pitstop-customer/**'
   workflow_dispatch:
 
