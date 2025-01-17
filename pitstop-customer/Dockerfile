@@ -1,3 +1,4 @@
+# Definir image docker 
 FROM node:10
 WORKDIR /app/customer
 COPY package.json ./
