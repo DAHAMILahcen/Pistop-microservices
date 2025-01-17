@@ -4,9 +4,7 @@ on:
   push:
     path:
       - 'pitstop-customer/**'
-  pull_request:
-    path:
-      - 'pitstop-customer/**'
+  workflow_dispatch:
 
 
 jobs:
