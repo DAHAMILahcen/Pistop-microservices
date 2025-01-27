@@ -39,6 +39,7 @@ jobs:
       - name: Clone GitOps repository
         run: |
           git clone https://github.com/${{github.repository_owner}}/${{vars.repo_gitops}}
+          ls -a
           cd infrastructure
 
       - name: Update Kubernetes manifests (deployment manifest) with new image tag
