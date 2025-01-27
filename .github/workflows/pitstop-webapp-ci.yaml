@@ -52,6 +52,8 @@ jobs:
           ls -a
           cd Gitops-repo-pitstop
           ls -a
+          git config --global user.name "${{vars.username}}"
+          git config --global user.email "${{vars.email}}"
           git add .
           git commit -m "Update image tag to ${{ github.sha }}"
           git push  origin master
