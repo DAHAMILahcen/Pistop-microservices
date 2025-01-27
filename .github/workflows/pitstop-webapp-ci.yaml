@@ -54,6 +54,7 @@ jobs:
           ls -a
           git config --global user.name "lahcendahami"
           git config --global user.email "lahcendahmi309@gmail.com"
+          git remote set-url origin https://${{ vars.token }}@github.com/${{github.repository_owner}}/${{vars.repo_gitops}}
           git add .
           git commit -m "Update image tag to ${{ github.sha }}"
           git push  origin master
