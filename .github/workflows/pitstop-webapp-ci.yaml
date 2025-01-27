@@ -44,14 +44,13 @@ jobs:
       - name: Update Kubernetes manifests (deployment manifest) with new image tag
         run: |
           cd Gitops-repo-pitstop
-          ls -a
           cd infrastructure
-          ls -a
           sed -i "s|image: dahami03/pitstop-webapp|image: dahami03/pitstop-webapp:${{github.sha}}|" pitstop-webapp-depl.yaml
 
       - name: Commit and push changes to GitOps repository
-        run: |
-          git status
-          git add pitstop-webapp-depl.yaml
+        run: | 
+          git config --global user.name "${{vars.username}}"
+          git config --global user.email "${{vars.email}}"
+          git add .
           git commit -m "Update image tag to ${{ github.sha }}"
-          git push origin master 
+          git push  origin master
