@@ -49,9 +49,8 @@ jobs:
 
       - name: Commit and push changes to GitOps repository
         run: | 
-          git init
-          git config --global user.name "${{vars.username}}"
-          git config --global user.email "${{vars.email}}"
+          ls -a
+          cd ..
           git add .
           git commit -m "Update image tag to ${{ github.sha }}"
           git push  origin master
