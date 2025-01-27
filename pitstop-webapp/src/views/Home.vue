@@ -45,7 +45,7 @@
                 >Full-Service Auto Repair & Maintenance Here at The Garage Auto
               </span>
               <span class="text-subtitle-2"
-                >helle world:Repair in Broken Arrow we know you rely on your vehicle for a
+                >helle world !:Repair in Broken Arrow we know you rely on your vehicle for a
                 lot of things. It has to get you to work, the kids to school,
                 and all the other obligations in between. Sometimes, your car
                 slows down, but life doesn’t, which is why we pride ourselves on
