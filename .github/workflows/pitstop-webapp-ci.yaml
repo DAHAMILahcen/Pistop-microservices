@@ -40,9 +40,11 @@ jobs:
         run: |
           git clone https://github.com/${{github.repository_owner}}/${{vars.repo_gitops}}
          
-          cd Gitops-repo-pitstop/infrastructure
-      
-
+          cd Gitops-repo-pitstop
+          ls -a
+          cd infrastructure
+          ls -a
+          
       - name: Update Kubernetes manifests (deployment manifest) with new image tag
         run: |
           sed -i "s|image: dahami03/pitstop-webapp|image: dahami03/pitstop-webapp:${{github.sha}}|" pitstop-webapp-depl.yaml
