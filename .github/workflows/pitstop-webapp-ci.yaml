@@ -50,7 +50,8 @@ jobs:
       - name: Commit and push changes to GitOps repository
         run: | 
           ls -a
-          cd ..
+          cd Gitops-repo-pitstop
+          ls -a
           git add .
           git commit -m "Update image tag to ${{ github.sha }}"
           git push  origin master
