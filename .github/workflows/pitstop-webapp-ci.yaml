@@ -8,15 +8,43 @@ on:
 
 
 jobs:
+  snyk-sast:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checkout du code source
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Configuration de Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # Adaptez à la version de Node.js de votre projet
+
+      # 3. Installation des dépendances du projet
+      - name: Install dependencies
+        run: |
+        cd pitstop-webapp
+        npm install 
+
+      # 4. Authentification avec Snyk
+      - name: Authenticate with Snyk
+        env:
+          SNYK_TOKEN: ${{ secrets.AUTH_TOKEN }} # Ajoutez le token dans les secrets GitHub
+        run: snyk auth $SNYK_TOKEN
+
+      # 5. Exécuter l'analyse SAST avec Snyk
+      - name: Run Snyk SAST
+        run: snyk code test
+
   build:
     # Ensure the runner is using the latest Ubuntu version
 
     runs-on: ubuntu-latest  
-
+    
     steps:
       - name: "Checkout the code to the runner"
         uses: actions/checkout@v4
-
       - name: "Build Docker image"
         run: |
           cd  pitstop-webapp
