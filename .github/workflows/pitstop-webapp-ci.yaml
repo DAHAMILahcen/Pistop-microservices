@@ -25,7 +25,8 @@ jobs:
       - name: Install dependencies
         run: |
           cd pitstop-webapp
-          npm install 
+          npm install
+          npm install -g snyk
 
       # 4. Authentification avec Snyk
       - name: Authenticate with Snyk
