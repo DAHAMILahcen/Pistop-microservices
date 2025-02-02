@@ -74,7 +74,7 @@ jobs:
         run: |
           cd Gitops-repo-pitstop
           cd infrastructure
-          sed -i "s|image: dahami03/pitstop-webapp|image: dahami03/pitstop-webapp:${{github.sha}}|" pitstop-webapp-depl.yaml
+          sed -i "s|image: dahami03/pitstop-webapp:**|image: dahami03/pitstop-webapp:${{github.sha}}|" pitstop-webapp-depl.yaml
 
       - name: Commit and push changes to GitOps repository
         run: | 
